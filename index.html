@@ -8,7 +8,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <!-- Firebase -->
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  
+const APP_PASSWORD = "Project1";
+
+const enteredPassword =
+prompt("Enter ClipBySu Password");
+
+if (enteredPassword !== APP_PASSWORD) {
+
+  document.body.innerHTML = `
+    <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#06080e;
+      color:white;
+      font-size:32px;
+      font-family:sans-serif;
+      flex-direction:column;
+      gap:12px;
+    ">
+      <div>🔒</div>
+      <div>Access Denied</div>
+    </div>
+  `;
+
+  throw new Error("Unauthorized");
+}
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"; 
+
 import { getDatabase, ref, push, onValue, remove, set, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 import {
   getAuth,
