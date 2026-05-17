@@ -11,6 +11,7 @@
   
 const APP_PASSWORD = "Project1";
 
+document.body.style.overflow = "hidden";
 
 document.body.innerHTML = `
 <div id="lockScreen" style="
@@ -111,6 +112,8 @@ if (val === APP_PASSWORD) {
 document.getElementById("lockScreen")
 .remove();
 
+document.body.style.overflow = "auto";
+  
 } else {
 
 document.getElementById("err")
