@@ -992,7 +992,9 @@ function renderHistory() {
   const q = (document.getElementById('srchIn')?.value || '').toLowerCase();
   const clips = window._clips || [];
   const filtered = q ? clips.filter(c => c.text.toLowerCase().includes(q)) : clips;
-  document.getElementById('hcnt').textContent = `HISTORY (${filtered.length})`;
+  const h =
+  document.getElementById('hcnt');
+  if (h) h.textContent = `HISTORY (${filtered.length})`;
   const el = document.getElementById('clipList');
   if (!filtered.length) {
     el.innerHTML = '<div class="empty-state"><span class="eico">📭</span><p>No clips yet — send from your phone!</p></div>';
