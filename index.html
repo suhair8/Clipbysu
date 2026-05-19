@@ -6,6 +6,26 @@
 <title>ClipBySu – Real Sync by Suhair</title>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL =
+'https://nsiteoziyfrycgisnpc1.supabase.co';
+
+const SUPABASE_ANON =
+'sb_publishable_z9cJZ9TVi7WSkKPv4N54sg_LEyO_uMK';
+
+const supabase =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON
+);
+
+const BUCKET = 'clipbysu-files';
+
+window._sb = supabase;
+  
+</script>
 <!-- Firebase -->
 <script type="module">
   
@@ -436,6 +456,7 @@ footer p{font-size:12px;color:var(--muted)}
     <button class="kk" style="font-size:13px" onclick="pk('')">CLR</button>
     <button class="kk" onclick="pk('0')">0</button>
     <button class="kk" style="font-size:18px" onclick="pb()">⌫</button>
+    <button class="ap-tab" onclick="showTab('files',this)">📁 <span>Files</span></button>
   </div>
 </div>
 
